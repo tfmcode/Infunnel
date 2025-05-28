@@ -21,12 +21,12 @@ const Loader = () => {
 
   return (
     <div
-      className={`fixed inset-0 bg-[#000f3b] flex flex-col items-center justify-center z-[9999] transition-opacity duration-700 ${
+      className={`fixed inset-0 bg-[#5f6884] flex flex-col items-center justify-center z-[9999] transition-opacity duration-700 ${
         fadeOut ? "opacity-0 pointer-events-none" : "opacity-100"
       }`}
     >
       <Image
-        src="/img/logoF.png"
+        src="/img/logoIN_navbar.png"
         alt="INFUNNEL Logo"
         width={80}
         height={80}

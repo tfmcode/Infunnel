@@ -76,7 +76,7 @@ const Hero = () => {
         <div ref={buttonRef} className="mt-10">
           <a
             href="#contacto"
-            className="inline-block bg-[#000f3b] hover:bg-[#000f3b] text-white font-semibold px-8 py-4 rounded-full shadow-lg transition-all duration-300"
+            className="inline-block bg-[#1a274f] hover:bg-[#1a274f] text-white font-semibold px-8 py-4 rounded-full shadow-lg transition-all duration-300"
             style={{
               letterSpacing: "0.05em",
             }}

@@ -21,14 +21,14 @@ const Footer = () => {
   };
 
   return (
-    <footer className="relative w-full bg-[#e0e4f5] text-[#e0e4f5] px-4 py-12">
+    <footer className="relative w-full bg-[##e6e7eb] text-[#e0e4f5] px-4 py-12">
       {/* Contenido principal */}
-      <div className="max-w-7xl mx-auto rounded-3xl bg-[#000f3b]/90 backdrop-blur-sm border border-white/10 px-6 py-12 shadow-xl">
+      <div className="max-w-7xl mx-auto rounded-3xl bg-[#1a274f]/90 backdrop-blur-sm border border-white/10 px-6 py-12 shadow-xl">
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-8 text-sm">
           {/* Marca */}
           <div className="col-span-2 sm:col-span-1 flex flex-col gap-3">
             <Image
-              src="/img/logoF.png"
+              src="/img/logoIN_navbar.png"
               alt="INFUNNEL Logo"
               width={120}
               height={120}

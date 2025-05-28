@@ -12,7 +12,7 @@ const serviciosData = {
       "Aplicación del branding en todos los canales digitales.",
       "Dirección creativa y validación antes de ejecutar piezas, campañas o contenido.",
     ],
-    imagen: "/img/branding.jpg",
+    imagen: "/servicesImg/branding.png",
   },
   ecommerce: {
     titulo: "Diseño, Desarrollo y Gestión de eCommerce",
@@ -25,7 +25,7 @@ const serviciosData = {
       "Mantenimiento mensual, carga de productos y banners.",
       "Optimización continua con analista dedicado.",
     ],
-    imagen: "/img/ecommerce.jpg",
+    imagen: "/servicesImg/ecommerce.png",
   },
   redes: {
     titulo: "Redes Sociales y Contenido Estratégico",
@@ -38,7 +38,7 @@ const serviciosData = {
       "Comunicación alineada entre redes y eCommerce.",
       "Reportes mensuales integrados (RRSS + eComm) con propuestas de ajuste.",
     ],
-    imagen: "/img/redes.jpg",
+    imagen: "/servicesImg/redes.png",
   },
   briefs: {
     titulo: "Briefs Estratégicos y Roadmap de Marca",
@@ -50,7 +50,7 @@ const serviciosData = {
       "Documentos diseñados y organizados para ser funcionales y presentables.",
       "Roadmap estratégico de implementación por fases.",
     ],
-    imagen: "/img/briefs.jpg",
+    imagen: "/servicesImg/brief.png",
   },
   analisis: {
     titulo: "Análisis de Datos y Optimización Estratégica",
@@ -62,7 +62,7 @@ const serviciosData = {
       "Diagnóstico + propuestas de mejora concretas.",
       "Acompañamiento estratégico con analista dedicado.",
     ],
-    imagen: "/img/analisis.jpg",
+    imagen: "/servicesImg/analisis.png",
   },
   publicidad: {
     titulo: "Publicidad y Performance Marketing",
@@ -74,7 +74,7 @@ const serviciosData = {
       "Creatividades alineadas a la identidad visual.",
       "Optimización continua + reportes mensuales claros.",
     ],
-    imagen: "/img/publicidad.jpg",
+    imagen: "/servicesImg/marketing.png",
   },
   diseno: {
     titulo: "Diseño Digital",
@@ -85,7 +85,7 @@ const serviciosData = {
       "Adaptaciones para diferentes plataformas (RRSS, web, email, tienda).",
       "Coordinación visual con branding y dirección creativa.",
     ],
-    imagen: "/img/diseno.jpg",
+    imagen: "/servicesImg/diseño.png",
   },
   fotografia: {
     titulo: "Fotografía Profesional",
@@ -96,7 +96,7 @@ const serviciosData = {
       "Dirección de arte alineada a tu branding.",
       "Edición y retoque profesional para distintos formatos y plataformas.",
     ],
-    imagen: "/img/fotografia.jpg",
+    imagen: "/servicesImg/fotografia.png",
   },
 };
 
