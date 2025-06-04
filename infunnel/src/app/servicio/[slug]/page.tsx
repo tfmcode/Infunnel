@@ -78,14 +78,17 @@ const serviciosData = {
   },
 };
 
-type PageProps = {
-  params: {
-    slug: keyof typeof serviciosData;
-  };
+// ✅ Para generar rutas estáticas al momento del build
+export function generateStaticParams() {
+  return Object.keys(serviciosData).map((slug) => ({ slug }));
+}
+
+type Props = {
+  params: { slug: string };
 };
 
-export default function ServicioPage({ params }: PageProps) {
-  const servicio = serviciosData[params.slug];
+export default function Page({ params }: Props) {
+  const servicio = serviciosData[params.slug as keyof typeof serviciosData];
 
   if (!servicio) {
     notFound();
