@@ -36,6 +36,9 @@ const Hero = () => {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
+      const isMobile = window.innerWidth < 640;
+
+      // Fondo cambia de blanco a violeta al hacer scroll
       gsap.fromTo(
         sectionRef.current,
         { background: "white" },
@@ -50,6 +53,7 @@ const Hero = () => {
         }
       );
 
+      // Entrada del section (fade + up)
       gsap.fromTo(
         sectionRef.current,
         { opacity: 0, y: 40 },
@@ -60,12 +64,13 @@ const Hero = () => {
           ease: "power2.out",
           scrollTrigger: {
             trigger: sectionRef.current,
-            start: "top 80%",
+            start: isMobile ? "top 92%" : "top 80%",
             toggleActions: "play none none reset",
           },
         }
       );
 
+      // Entrada del contenido
       gsap.fromTo(
         contentRef.current,
         { opacity: 0, y: 30 },
@@ -76,12 +81,13 @@ const Hero = () => {
           ease: "power2.out",
           scrollTrigger: {
             trigger: contentRef.current,
-            start: "top 80%",
+            start: isMobile ? "top 94%" : "top 80%",
             toggleActions: "play none none reset",
           },
         }
       );
 
+      // Rotación continua de la imagen
       gsap.to(imageRef.current, {
         rotate: 360,
         repeat: -1,

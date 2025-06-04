@@ -11,11 +11,9 @@ import {
   FaShoppingCart,
   FaBullhorn,
   FaPenNib,
-  FaChartLine,
-  FaBullseye,
 } from "react-icons/fa";
 
-// 📝 Integramos las fuentes de Google Fonts
+// Tipografías
 import { Playfair_Display, Inter, Lato } from "next/font/google";
 
 const playfair = Playfair_Display({
@@ -59,16 +57,6 @@ const services = [
     title: "Briefs Estratégicos y Roadmap de Marca",
     slug: "briefs",
   },
-  {
-    icon: <FaChartLine className="text-3xl mb-2 text-[#1F0F41]" />,
-    title: "Análisis de Datos y Optimización Estratégica",
-    slug: "analisis",
-  },
-  {
-    icon: <FaBullseye className="text-3xl mb-2 text-[#1F0F41]" />,
-    title: "Publicidad y Performance Marketing",
-    slug: "publicidad",
-  },
 ];
 
 const Page = () => {
@@ -78,6 +66,8 @@ const Page = () => {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
+      const isMobile = window.innerWidth < 640;
+
       gsap.from(cardRefs.current, {
         y: 40,
         opacity: 0,
@@ -86,7 +76,7 @@ const Page = () => {
         stagger: 0.2,
         scrollTrigger: {
           trigger: sectionRef.current,
-          start: "top 80%",
+          start: isMobile ? "top 92%" : "top 80%",
           toggleActions: "play none none reset",
         },
       });
@@ -112,35 +102,31 @@ const Page = () => {
     <section
       ref={sectionRef}
       id="services"
-      className={`py-30 px-6 bg-white relative overflow-hidden ${playfair.variable} ${inter.variable} ${lato.variable}`}
+      className={`py-20 px-4 sm:px-6 bg-white relative overflow-hidden ${playfair.variable} ${inter.variable} ${lato.variable}`}
     >
-      {/* Fondo de imagen con transparencia */}
+      {/* Fondo decorativo */}
       <div className="absolute inset-0 z-0">
         <Image
           src="/img/Service.png"
           alt="Decoración"
           fill
-          className="object-cover opacity-25"
+          className="object-center md:object-cover opacity-25 md:opacity-20 scale-[1.4] md:scale-100"
           priority
         />
       </div>
 
-      {/* Contenido */}
+      {/* Título */}
       <div className="relative z-10 max-w-5xl mx-auto mb-12">
         <h2
-          className="text-3xl md:text-4xl font-normal text-center text-[#1F0F41] mb-8"
-          style={{
-            fontFamily: "var(--font-playfair)",
-            display: "flex",
-            justifyContent: "center",
-            marginBottom: "90px",
-          }}
+          className="text-3xl md:text-4xl font-normal text-center text-[#1F0F41] mb-[70px]"
+          style={{ fontFamily: "var(--font-playfair)" }}
         >
           NUESTROS SERVICIOS
         </h2>
       </div>
 
-      <div className="relative z-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 place-items-center">
+      {/* Grid de servicios */}
+      <div className="relative z-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-4 max-w-4xl mx-auto justify-items-center md:justify-items-start">
         {services.map((item, idx) => (
           <div
             key={idx}

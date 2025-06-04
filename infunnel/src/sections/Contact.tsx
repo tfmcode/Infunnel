@@ -38,17 +38,19 @@ const Contact = () => {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
+      const isMobile = window.innerWidth < 640;
+
       gsap.fromTo(
         sectionRef.current,
         { opacity: 0, y: 40 },
         {
           opacity: 1,
           y: 0,
-          duration: 1.5,
+          duration: 1.2,
           ease: "power2.out",
           scrollTrigger: {
             trigger: sectionRef.current,
-            start: "top 80%",
+            start: isMobile ? "top 90%" : "top 80%", // 👈 ajustado para mobile
             toggleActions: "play none none reset",
           },
         }
@@ -60,11 +62,11 @@ const Contact = () => {
         {
           opacity: 1,
           y: 0,
-          duration: 1.2,
+          duration: 1,
           ease: "power2.out",
           scrollTrigger: {
             trigger: contentRef.current,
-            start: "top 80%",
+            start: isMobile ? "top 92%" : "top 80%", // 👈 más sensible en mobile
             toggleActions: "play none none reset",
           },
         }
