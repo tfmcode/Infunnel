@@ -78,17 +78,19 @@ const serviciosData = {
   },
 };
 
-// ✅ Para generar rutas estáticas al momento del build
+// ✅ Genera las rutas en el build
 export function generateStaticParams() {
   return Object.keys(serviciosData).map((slug) => ({ slug }));
 }
 
 type Props = {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 };
 
-export default function Page({ params }: Props) {
-  const servicio = serviciosData[params.slug as keyof typeof serviciosData];
+export default async function Page({ params }: Props) {
+  const { slug } = await params;
+
+  const servicio = serviciosData[slug as keyof typeof serviciosData];
 
   if (!servicio) {
     notFound();
