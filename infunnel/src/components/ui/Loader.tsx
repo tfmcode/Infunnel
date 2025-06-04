@@ -28,8 +28,8 @@ const Loader = () => {
       <Image
         src="/img/logoIN_navbar.png"
         alt="INFUNNEL Logo"
-        width={80}
-        height={80}
+        width={100}
+        height={100}
         className={`transition-transform duration-700 ${
           fadeOut ? "scale-90" : "scale-100"
         }`}

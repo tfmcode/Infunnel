@@ -5,6 +5,13 @@ import { usePathname } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 import { Menu, X } from "lucide-react";
+import { Inter } from "next/font/google";
+
+const inter = Inter({
+  subsets: ["latin"],
+  weight: ["400", "500", "600"],
+  variable: "--font-inter",
+});
 
 const navItemsLeft = [
   { label: "Inicio", href: "/" },
@@ -48,7 +55,7 @@ const Navbar = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 w-full z-50 text-[#e0e4f5] transition-all duration-300 ${
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
         scrolled || isServicioPage ? "bg-[#1a274f] py-2" : "bg-transparent py-4"
       }`}
     >
@@ -59,26 +66,29 @@ const Navbar = () => {
             <Link
               key={item.label}
               href={item.href}
-              className={`transition-colors duration-300 ${
-                activeSection === item.href.slice(1)
-                  ? "text-white"
-                  : "hover:text-white"
+              className={`${inter.className} transition-colors duration-300 ${
+                scrolled || isServicioPage
+                  ? "text-white hover:text-[#e0e4f5]"
+                  : "text-[#1F0F41] hover:text-[#1a274f]"
+              } ${
+                activeSection === item.href.slice(1) && "font-bold underline"
               }`}
             >
               {item.label}
             </Link>
           ))}
         </nav>
-
         {/* Logo centrado */}
         <div className="flex items-center justify-center flex-1">
           <Link href="/" className="flex items-center gap-2">
             <Image
               src="/img/logoIN_navbar.png"
               alt="INFUNNEL Logo"
-              width={120} // Ajustá según el tamaño deseado
+              width={120}
               height={50}
-              className="object-contain"
+              className={`object-contain transition-all duration-300 ${
+                scrolled || isServicioPage ? "" :"invert" 
+              }`}
             />
           </Link>
         </div>
@@ -90,9 +100,11 @@ const Navbar = () => {
               key={item.label}
               href={item.href}
               className={`transition-colors duration-300 ${
-                activeSection === item.href.slice(1)
-                  ? "text-white"
-                  : "hover:text-white"
+                scrolled || isServicioPage
+                  ? "text-white hover:text-[#e0e4f5]"
+                  : "text-[#1F0F41] hover:text-[#1a274f]"
+              } ${
+                activeSection === item.href.slice(1) && "font-bold underline"
               }`}
             >
               {item.label}
@@ -103,7 +115,11 @@ const Navbar = () => {
         {/* Botón hamburguesa */}
         <button
           onClick={() => setOpen(!open)}
-          className="md:hidden flex items-center justify-center p-2 rounded-full bg-[#e0e4f5] text-[#1a274f] hover:bg-[#e0e4f5]/90 transition"
+          className={`md:hidden flex items-center justify-center p-2 rounded-full transition ${
+            scrolled || isServicioPage
+              ? "bg-white text-[#1a274f]"
+              : "bg-[#e0e4f5] text-[#1a274f] hover:bg-[#e0e4f5]/90"
+          }`}
         >
           {open ? <X size={24} /> : <Menu size={24} />}
         </button>
@@ -113,7 +129,7 @@ const Navbar = () => {
       <div
         className={`md:hidden transition-all duration-500 ease-in-out ${
           open ? "max-h-60 opacity-100" : "max-h-0 opacity-0"
-        } overflow-hidden bg-[#1a274f] text-[#e0e4f5]`}
+        } overflow-hidden bg-[#1a274f] text-white`}
       >
         <ul className="flex flex-col items-center gap-4 py-4">
           {[...navItemsLeft, ...navItemsRight].map((item) => (
@@ -121,7 +137,7 @@ const Navbar = () => {
               <Link
                 href={item.href}
                 onClick={() => setOpen(false)}
-                className="block py-2 transition-colors duration-300 hover:text-white"
+                className="block py-2 transition-colors duration-300 hover:text-[#e0e4f5]"
               >
                 {item.label}
               </Link>

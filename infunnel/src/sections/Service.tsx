@@ -13,9 +13,28 @@ import {
   FaPenNib,
   FaChartLine,
   FaBullseye,
-  FaPaintBrush,
-  FaCamera,
 } from "react-icons/fa";
+
+// 📝 Integramos las fuentes de Google Fonts
+import { Playfair_Display, Inter, Lato } from "next/font/google";
+
+const playfair = Playfair_Display({
+  subsets: ["latin"],
+  weight: ["400", "600", "700"],
+  variable: "--font-playfair",
+});
+
+const inter = Inter({
+  subsets: ["latin"],
+  weight: ["400", "500", "600"],
+  variable: "--font-inter",
+});
+
+const lato = Lato({
+  subsets: ["latin"],
+  weight: ["400"],
+  variable: "--font-lato",
+});
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -49,16 +68,6 @@ const services = [
     icon: <FaBullseye className="text-3xl mb-2 text-[#1F0F41]" />,
     title: "Publicidad y Performance Marketing",
     slug: "publicidad",
-  },
-  {
-    icon: <FaPaintBrush className="text-3xl mb-2 text-[#1F0F41]" />,
-    title: "Diseño Digital",
-    slug: "diseno",
-  },
-  {
-    icon: <FaCamera className="text-3xl mb-2 text-[#1F0F41]" />,
-    title: "Fotografía Profesional",
-    slug: "fotografia",
   },
 ];
 
@@ -103,7 +112,7 @@ const Page = () => {
     <section
       ref={sectionRef}
       id="services"
-      className="py-30 px-6 bg-white relative overflow-hidden"
+      className={`py-30 px-6 bg-white relative overflow-hidden ${playfair.variable} ${inter.variable} ${lato.variable}`}
     >
       {/* Fondo de imagen con transparencia */}
       <div className="absolute inset-0 z-0">
@@ -117,14 +126,18 @@ const Page = () => {
       </div>
 
       {/* Contenido */}
-      <div className="relative z-10 max-w-5xl mx-auto text-center mb-12">
-        <h2 className="text-3xl md:text-4xl font-extrabold text-[#1F0F41] mb-4">
-          Nuestros Servicios
+      <div className="relative z-10 max-w-5xl mx-auto mb-12">
+        <h2
+          className="text-3xl md:text-4xl font-normal text-center text-[#1F0F41] mb-8"
+          style={{
+            fontFamily: "var(--font-playfair)",
+            display: "flex",
+            justifyContent: "center",
+            marginBottom: "90px",
+          }}
+        >
+          NUESTROS SERVICIOS
         </h2>
-        <p className="text-sm md:text-base text-[#1F0F41]/80">
-          Potenciamos tu negocio con estrategia, branding, eCommerce, contenido
-          y análisis de datos.
-        </p>
       </div>
 
       <div className="relative z-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 place-items-center">
@@ -138,7 +151,7 @@ const Page = () => {
             className="flex flex-col items-center justify-center text-center w-60 h-28 sm:w-72 sm:h-32 rounded-full border border-[#1F0F41] shadow-md hover:bg-[#e6e7eb] hover:text-black transition-colors duration-300 cursor-pointer p-4"
             style={{
               letterSpacing: "0.02em",
-              fontFamily: "'Helvetica Neue', sans-serif",
+              fontFamily: "var(--font-inter)",
               lineHeight: "1.3",
             }}
           >

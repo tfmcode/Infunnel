@@ -3,17 +3,29 @@
 import { useState } from "react";
 import toast from "react-hot-toast";
 
+const servicios = [
+  "Branding Estratégico y Dirección de Comunicación",
+  "Diseño, Desarrollo y Gestión de eCommerce",
+  "Redes Sociales y Contenido Estratégico",
+  "Briefs Estratégicos y Roadmap de Marca",
+  "Análisis de Datos y Optimización Estratégica",
+  "Publicidad y Performance Marketing",
+];
+
 const Form = () => {
   const [formData, setFormData] = useState({
     nombre: "",
     email: "",
     mensaje: "",
+    servicio: "",
   });
 
   const [loading, setLoading] = useState(false);
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >
   ) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
@@ -32,7 +44,12 @@ const Form = () => {
       if (!res.ok) throw new Error("Error");
 
       toast.success("¡Mensaje enviado con éxito!");
-      setFormData({ nombre: "", email: "", mensaje: "" });
+      setFormData({
+        nombre: "",
+        email: "",
+        mensaje: "",
+        servicio: "",
+      });
     } catch {
       toast.error("Hubo un error. Por favor, intentá de nuevo.");
     } finally {
@@ -50,7 +67,7 @@ const Form = () => {
           onChange={handleChange}
           type="text"
           placeholder="Tu nombre"
-          className="w-full rounded-xl border border-gray-300 px-4 py-3 text-[#151515] focus:outline-none focus:ring-2 focus:ring-[#d97706] transition duration-300"
+          className="w-full rounded-xl border border-gray-300 px-4 py-3 text-[#151515] focus:outline-none focus:ring-2 focus:ring-[#000f3b] transition duration-300"
           required
         />
       </div>
@@ -66,6 +83,26 @@ const Form = () => {
           className="w-full rounded-xl border border-gray-300 px-4 py-3 text-[#151515] focus:outline-none focus:ring-2 focus:ring-[#000f3b] transition duration-300"
           required
         />
+      </div>
+
+      <div>
+        <label className="block text-sm font-semibold mb-1">Servicio</label>
+        <select
+          name="servicio"
+          value={formData.servicio}
+          onChange={handleChange}
+          className="w-full rounded-xl border border-gray-300 px-4 py-3 text-[#151515] focus:outline-none focus:ring-2 focus:ring-[#000f3b] transition duration-300"
+          required
+        >
+          <option value="" disabled>
+            Seleccioná un servicio
+          </option>
+          {servicios.map((servicio) => (
+            <option key={servicio} value={servicio}>
+              {servicio}
+            </option>
+          ))}
+        </select>
       </div>
 
       <div>

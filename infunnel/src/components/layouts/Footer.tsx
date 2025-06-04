@@ -26,7 +26,7 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto rounded-3xl bg-[#1a274f]/90 backdrop-blur-sm border border-white/10 px-6 py-12 shadow-xl">
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-8 text-sm">
           {/* Marca */}
-          <div className="col-span-2 sm:col-span-1 flex flex-col gap-3">
+          <div className="col-span-2 sm:col-span-1 flex flex-row sm:flex-col justify-center gap-3 items-center text-center">
             <Image
               src="/img/logoIN_navbar.png"
               alt="INFUNNEL Logo"

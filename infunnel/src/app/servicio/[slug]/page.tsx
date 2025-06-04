@@ -75,7 +75,7 @@ const serviciosData = {
       "Optimización continua + reportes mensuales claros.",
     ],
     imagen: "/servicesImg/marketing.png",
-  },
+  }/* ,
   diseno: {
     titulo: "Diseño Digital",
     descripcion:
@@ -97,7 +97,7 @@ const serviciosData = {
       "Edición y retoque profesional para distintos formatos y plataformas.",
     ],
     imagen: "/servicesImg/fotografia.png",
-  },
+  }, */
 };
 
 export default function ServicioPage({ params }: { params: { slug: string } }) {

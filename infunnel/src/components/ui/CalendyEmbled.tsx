@@ -3,7 +3,7 @@ const CalendlyEmbed = () => (
     <div
       className="calendly-inline-widget"
       data-url="https://calendly.com/usuario-de-calendly/15min"
-      style={{ minWidth: "320px", height: "700px" }}
+      style={{ minWidth: "320px", height: "500px" }}
     ></div>
   </div>
 );

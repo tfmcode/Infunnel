@@ -63,7 +63,7 @@ export default function RootLayout({
         <Navbar />
         <Loader />
         <Toaster position="top-center" />
-        <main className="min-h-screen">{children}</main>
+        <main>{children}</main>
         <Footer />
         <WhatsApp />
         <Script
