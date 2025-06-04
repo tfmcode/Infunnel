@@ -78,10 +78,18 @@ const serviciosData = {
   },
 };
 
-export default function ServicioPage({ params }: { params: { slug: string } }) {
-  const servicio = serviciosData[params.slug as keyof typeof serviciosData];
+type PageProps = {
+  params: {
+    slug: keyof typeof serviciosData;
+  };
+};
 
-  if (!servicio) return notFound();
+export default function ServicioPage({ params }: PageProps) {
+  const servicio = serviciosData[params.slug];
+
+  if (!servicio) {
+    notFound();
+  }
 
   return <ServicioLayout {...servicio} />;
 }
