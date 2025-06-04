@@ -78,12 +78,14 @@ const serviciosData = {
   },
 };
 
-export default async function ServicioPage({
-  params,
-}: {
-  params: { slug: string };
-}) {
-  const servicio = serviciosData[params.slug as keyof typeof serviciosData];
+type Props = {
+  params: {
+    slug: keyof typeof serviciosData;
+  };
+};
+
+export default async function ServicioPage({ params }: Props) {
+  const servicio = serviciosData[params.slug];
 
   if (!servicio) {
     notFound();
