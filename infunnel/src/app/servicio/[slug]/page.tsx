@@ -75,32 +75,14 @@ const serviciosData = {
       "Optimización continua + reportes mensuales claros.",
     ],
     imagen: "/servicesImg/marketing.png",
-  }/* ,
-  diseno: {
-    titulo: "Diseño Digital",
-    descripcion:
-      "¿Para qué sirve? Para asegurar que toda tu comunicación visual —en redes, eComm, campañas— se vea profesional, coherente y alineada a tu identidad.",
-    lista: [
-      "Diseño de piezas gráficas mensuales (banners, flyers, carruseles, visuales de campañas).",
-      "Adaptaciones para diferentes plataformas (RRSS, web, email, tienda).",
-      "Coordinación visual con branding y dirección creativa.",
-    ],
-    imagen: "/servicesImg/diseño.png",
   },
-  fotografia: {
-    titulo: "Fotografía Profesional",
-    descripcion:
-      "¿Para qué sirve? Para crear contenido visual de alto impacto que potencie tu identidad de marca en redes, campañas y tienda online.",
-    lista: [
-      "Producción de sesiones fotográficas de producto, lifestyle o institucionales.",
-      "Dirección de arte alineada a tu branding.",
-      "Edición y retoque profesional para distintos formatos y plataformas.",
-    ],
-    imagen: "/servicesImg/fotografia.png",
-  }, */
 };
 
-export default function ServicioPage({ params }: { params: { slug: string } }) {
+export default async function ServicioPage({
+  params,
+}: {
+  params: { slug: string };
+}) {
   const servicio = serviciosData[params.slug as keyof typeof serviciosData];
 
   if (!servicio) {
