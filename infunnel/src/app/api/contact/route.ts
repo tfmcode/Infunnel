@@ -23,16 +23,16 @@ export async function POST(req: Request) {
     const transporter = nodemailer.createTransport({
       service: "gmail",
       auth: {
-        user: process.env.EMAIL_USER || "tfmcode@gmail.com",
+        user: process.env.EMAIL_USER || "contacto@infunnel.com.ar",
         pass: process.env.EMAIL_PASS, // Debe estar en tu .env
       },
     });
 
     const mailOptions = {
       from: `"INFUNNEL Contacto" <${
-        process.env.EMAIL_USER || "tfmcode@gmail.com"
+        process.env.EMAIL_USER || "contacto@infunnel.com.ar"
       }>`,
-      to: process.env.EMAIL_TO || "tfmcode@gmail.com", // Destino inicial
+      to: process.env.EMAIL_TO || "contacto@infunnel.com.ar", // Destino inicial
       subject: "Nuevo mensaje de contacto desde INFUNNEL",
       html: `
         <h2>Nuevo mensaje desde el formulario de contacto</h2>

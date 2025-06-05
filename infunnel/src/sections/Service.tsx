@@ -11,7 +11,9 @@ import {
   FaShoppingCart,
   FaBullhorn,
   FaPenNib,
+  FaNetworkWired,
 } from "react-icons/fa";
+import { IoAnalyticsSharp } from "react-icons/io5";
 
 // Tipografías
 import { Playfair_Display, Inter, Lato } from "next/font/google";
@@ -48,7 +50,7 @@ const services = [
     slug: "ecommerce",
   },
   {
-    icon: <FaBullhorn className="text-3xl mb-2 text-[#1F0F41]" />,
+    icon: <FaNetworkWired  className="text-3xl mb-2 text-[#1F0F41]" />,
     title: "Redes Sociales y Contenido Estratégico",
     slug: "redes",
   },
@@ -57,6 +59,17 @@ const services = [
     title: "Briefs Estratégicos y Roadmap de Marca",
     slug: "briefs",
   },
+    {
+    icon: <FaBullhorn className="text-3xl mb-2 text-[#1F0F41]" />,
+    title: "Publicidad y Performance Marketing",
+    slug: "publicidad",
+  },
+  {
+    icon: <IoAnalyticsSharp className="text-3xl mb-2 text-[#1F0F41]" />,
+    title: "Analisis de Datos y Optimización de Campañas",
+    slug: "analisis",
+  },
+
 ];
 
 const Page = () => {
@@ -125,8 +138,8 @@ const Page = () => {
         </h2>
       </div>
 
-      {/* Grid de servicios */}
-      <div className="relative z-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-4 max-w-4xl mx-auto justify-items-center md:justify-items-start">
+      {/* Grid de servicios: 3x2 */}
+      <div className="relative z-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 gap-y-8 max-w-5xl mx-auto justify-items-center">
         {services.map((item, idx) => (
           <div
             key={idx}
