@@ -85,8 +85,8 @@ const Navbar = () => {
             <Image
               src="/img/infunnel-15.png"
               alt="INFUNNEL Logo"
-              width={140}
-              height={75}
+              width={175}
+              height={120}
               className="object-contain transition-all duration-300"
               priority
             />

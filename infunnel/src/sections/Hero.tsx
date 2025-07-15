@@ -18,6 +18,7 @@ const Hero = () => {
       ref={sectionRef}
       id="hero"
       className="w-full transition-opacity duration-1000 opacity-0 bg-white flex items-center justify-center"
+      style={{backgroundColor: "#f4fdfe"}}
     >
       {/* Imagen Mobile */}
       <div className="block md:hidden w-full">
