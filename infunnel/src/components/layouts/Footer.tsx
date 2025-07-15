@@ -28,16 +28,13 @@ const Footer = () => {
           {/* Marca */}
           <div className="col-span-2 sm:col-span-1 flex flex-row sm:flex-col justify-center gap-3 items-center text-center">
             <Image
-              src="/img/logoIN_navbar.png"
+              src="/img/infunnel-15.png"
               alt="INFUNNEL Logo"
-              width={120}
-              height={120}
+              width={175}
+              height={150}
               className="rounded-lg"
             />
-            <p className="text-xs max-w-[12rem]">
-              Estrategia integral para marcas que quieren crecer con coherencia
-              y visión.
-            </p>
+         
           </div>
 
           {/* Servicios */}

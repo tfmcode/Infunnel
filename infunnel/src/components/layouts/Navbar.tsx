@@ -55,11 +55,11 @@ const Navbar = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-        scrolled || isServicioPage ? "bg-[#1a274f] py-2" : "bg-transparent py-4"
+      className={`fixed top-0 left-0 w-full z-50 h-[80px] transition-all duration-300 ${
+        scrolled || isServicioPage ? "bg-[#323d62]" : "bg-transparent"
       }`}
     >
-      <div className="max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6">
+      <div className="max-w-7xl mx-auto flex items-center justify-between h-full px-4 sm:px-6">
         {/* Links a la izquierda */}
         <nav className="hidden md:flex gap-6 text-base font-semibold">
           {navItemsLeft.map((item) => (
@@ -78,17 +78,17 @@ const Navbar = () => {
             </Link>
           ))}
         </nav>
+
         {/* Logo centrado */}
         <div className="flex items-center justify-center flex-1">
           <Link href="/" className="flex items-center gap-2">
             <Image
-              src="/img/logoIN_navbar.png"
+              src="/img/infunnel-15.png"
               alt="INFUNNEL Logo"
-              width={120}
-              height={50}
-              className={`object-contain transition-all duration-300 ${
-                scrolled || isServicioPage ? "" :"invert" 
-              }`}
+              width={140}
+              height={75}
+              className="object-contain transition-all duration-300"
+              priority
             />
           </Link>
         </div>
@@ -129,7 +129,7 @@ const Navbar = () => {
       <div
         className={`md:hidden transition-all duration-500 ease-in-out ${
           open ? "max-h-60 opacity-100" : "max-h-0 opacity-0"
-        } overflow-hidden bg-[#1a274f] text-white`}
+        } overflow-hidden bg-[#323d62] text-white`}
       >
         <ul className="flex flex-col items-center gap-4 py-4">
           {[...navItemsLeft, ...navItemsRight].map((item) => (

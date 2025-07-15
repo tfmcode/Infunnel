@@ -32,7 +32,7 @@ export const metadata = {
     siteName: "INFUNNEL",
     images: [
       {
-        url: "/img/logoF.png",
+        url: "https://infunnel.com.ar/img/infunnel-15.png",
         width: 1200,
         height: 630,
       },
@@ -45,7 +45,7 @@ export const metadata = {
     title: "INFUNNEL | Estrategia, Branding y eCommerce",
     description:
       "Dirección estratégica y marketing digital para marcas en Argentina: branding, eCommerce, contenido y más.",
-    images: ["/img/logoF.png"],
+    images: ["/img/infunnel-15.png"],
   },
 };
 
